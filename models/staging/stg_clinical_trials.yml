@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_clinical_trials
+    description: "Clinical trials extracted from the raw ClinicalTrials.gov JSON data."
+
+    columns:
+      - name: nct_id
+        description: "Unique identifier of the clinical trial."
+        data_tests:
+          - not_null
+          - unique

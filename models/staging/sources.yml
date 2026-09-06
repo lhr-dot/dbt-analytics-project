@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: clinical_trials
+    schema: raw
+    tables:
+      - name: clinical_trials_raw

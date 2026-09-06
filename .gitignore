@@ -19,3 +19,6 @@ dbt_packages/
 # Secrets / local configuration
 .env
 .env.*
+
+# Raw data
+data/
