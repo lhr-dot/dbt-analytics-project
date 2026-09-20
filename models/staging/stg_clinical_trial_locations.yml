@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_clinical_trial_locations
+    description: "Clinical trial locations extracted from the RAW ClinicalTrials.gov JSON data."
+
+    columns:
+      - name: nct_id
+        description: "Identifier of the clinical trial. Multiple rows can belong to the same trial."
+        data_tests:
+          - not_null
+
+      - name: country
+        description: "Country where the clinical trial location is registered."
+        data_tests:
+          - not_null
