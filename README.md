@@ -1,15 +1,34 @@
-Welcome to your new dbt project!
+# Pharma Clinical Trials Analytics
 
-### Using the starter project
+Data Engineering / Analytics Engineering project built from the ClinicalTrials.gov API.
 
-Try running the following commands:
-- dbt run
-- dbt test
+The objective is to build an end-to-end data pipeline for analysing clinical trial portfolios by study, sponsor and geography.
 
+---
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Project Objective
+
+This project explores how a clinical trial portfolio can be collected, structured and transformed into analytics-ready datasets.
+
+The main questions addressed by the project are:
+
+- How many clinical trials are in the portfolio?
+- What are their statuses and study types?
+- Which sponsors are involved?
+- Where are clinical trials conducted?
+- How many locations and countries are associated with each trial?
+
+The project is designed as a reproducible Data Engineering / Analytics Engineering pipeline.
+
+---
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A[ClinicalTrials.gov API] --> B[Python Ingestion]
+    B --> C[(PostgreSQL RAW)]
+    C --> D[dbt]
+    D --> E[Staging Models]
+    E --> F[Mart Models]
+    F --> G[Analytics]
